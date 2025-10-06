@@ -1,0 +1,396 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  padding-top: 80px;
+  transition: background 0.3s, color 0.3s, font-size 0.3s;
+  overflow-x: hidden;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4 {
+  color: #00E5FF;
+}
+body.dark-mode p { color: #bbb; }
+
+/* ===== Navbar ===== */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #001F4D, #0044CC, #0099FF);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: none;
+}
+.logo span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #00E5FF;
+  letter-spacing: 1.5px;
+  transition: color 0.3s;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+nav ul li {
+  margin: 0 15px;
+  position: relative;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  cursor: pointer;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #00E5FF;
+  transition: 0.3s;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ===== Hamburger ===== */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== Float Menu ===== */
+.float-menu {
+  position: fixed;
+  top: 0;
+  right: -270px;
+  width: 250px;
+  height: 100%;
+  background: #f5f5f5;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+  padding: 20px;
+  z-index: 2000;
+  transition: right 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.float-menu.show {
+  right: 0;
+  opacity: 1;
+}
+.float-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.float-menu-header h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3em;
+  color: #0044CC;
+}
+.close-menu {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: #0044CC;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close-menu:hover {
+  color: #0099FF;
+}
+.float-menu ul {
+  list-style: none;
+  padding: 0;
+}
+.float-menu ul li {
+  margin: 15px 0;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  color: #0044CC;
+  transition: 0.3s;
+}
+.float-menu ul li:hover {
+  color: #0099FF;
+}
+body.dark-mode .float-menu {
+  background: #1e1e1e;
+}
+body.dark-mode .float-menu-header h3,
+body.dark-mode .close-menu,
+body.dark-mode .float-menu ul li {
+  color: #00E5FF;
+}
+
+/* ===== Canvas ===== */
+#lightCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Main ===== */
+main {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: auto;
+}
+h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+  color: #0044CC;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+h2 {
+  margin-top: 40px;
+  font-size: 1.7em;
+  color: #0044CC;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+h3 {
+  margin: 20px 0 15px;
+  font-size: 1.3em;
+  color: #0044CC;
+}
+p {
+  margin: 10px 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+ul {
+  margin: 10px 0 20px 20px;
+}
+ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* ===== Blocos Win10 e Win11 ===== */
+.bloco-cmd {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* espaço entre Win10 e Win11 */
+  margin: 50px 0;
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.linha .texto {
+  flex: 2;
+  text-align: justify;
+}
+
+.linha .imagem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  border: 2px dashed #ccc;
+  min-height: 250px;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 15px;
+}
+
+.imagem {
+  text-align: center;
+}
+
+.imagem img {
+  max-width: 220px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 8px auto;
+}
+
+.legenda {
+  font-size: 14px;
+  font-style: italic;
+  color: #666;
+}
+
+
+/* Dark mode para blocos */
+body.dark-mode .linha .imagem {
+  background: #1e1e1e;
+  border: 2px dashed #00E5FF;
+  color: #00E5FF;
+}
+body.dark-mode .linha .texto p {
+  color: #bbb;
+}
+
+
+
+
+/* ===== Float menu (menu inicial - janela fantasma) ===== */
+.float-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;             /* escondido por padrão */
+  width: 300px;
+  height: 100%;
+  background: #f5f7fb;
+  color: #07305f;
+  box-shadow: -8px 0 24px rgba(2,12,40,0.18);
+  padding: 22px;
+  z-index:2000;
+  transition: right .36s cubic-bezier(.2,.9,.2,1), opacity .28s ease;
+  opacity: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling:touch;
+}
+.float-menu.show { right: 0; opacity: 1; }
+
+/* cabeçalho do menu */
+.float-menu-header { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:14px; }
+.float-menu-header h3 { font-family:'Orbitron',sans-serif; font-size:1.25rem; color:#003b82; margin:0; }
+.close-menu { font-size:1.6rem; background:none; border:0; color:#003b82; cursor:pointer; padding:4px 6px; border-radius:6px; transition:background .18s, color .18s; }
+.close-menu:hover { background: rgba(0,68,204,0.06); color:#005ce6; }
+
+/* lista do menu */
+.float-menu ul { list-style:none; padding:0; margin:6px 0 18px 0; }
+.float-menu ul li { margin:12px 0; font-weight:600; font-family:'Orbitron',sans-serif; color:#0044CC; cursor:pointer; line-height:1.25; }
+.float-menu ul li a { color:inherit; text-decoration:none; display:block; padding:8px 6px; border-radius:6px; transition: background .18s, color .18s; }
+
+/* hover e foco para itens/links */
+.float-menu ul li:hover,
+.float-menu ul li a:hover { color:#0077ff; background: rgba(0,119,255,0.06); }
+.float-menu ul li[role="button"]:focus,
+.float-menu ul li a:focus { outline:none; box-shadow: inset 0 0 0 3px rgba(0,119,255,0.08); border-radius:6px; }
+
+/* separa items que são botões (acessibilidade/comandos) */
+.float-menu ul li[role="button"] { display:block; padding:8px 6px; }
+
+/* quando item é link, manter bloco visual */
+.float-menu ul li > a { padding-left:6px; }
+
+/* barra lateral visual para links importantes */
+.float-menu ul li.important { border-left:3px solid #0044CC; padding-left:10px; }
+
+/* ===== Mini-descrições (CMD / PowerShell / Win+R) ===== */
+.comandos-intro {
+  font-size:0.95rem; color:#253544; margin-bottom:12px; line-height:1.45;
+}
+.mini-desc {
+  display:block;
+  font-size:0.86rem;
+  color:#445d75;
+  margin-top:6px;
+  padding:8px 10px;
+  background: #eef5ff;
+  border-radius:8px;
+  border-left:3px solid rgba(0,68,204,0.14);
+  line-height:1.4;
+}
+.mini-desc code {
+  background:#e7eefb;
+  padding:2px 6px; border-radius:6px; font-family:monospace; font-size:0.82rem;
+  color:#003263;
+}
+
+
+/* pequenas melhorias visuais para o menu em telas menores */
+@media (max-width:560px){
+  .float-menu { width: 92%; right: -100%; }
+  .float-menu.show { right: 4%; }
+}
+
+/* ===== Dark Mode ajustes (menu inicial + descrições) ===== */
+body.dark-mode .float-menu {
+  background:#0f1417;
+  color:#bfefff;
+  box-shadow:-8px 0 30px rgba(0,0,0,0.6);
+}
+body.dark-mode .float-menu-header h3 { color:#00E5FF; }
+body.dark-mode .close-menu { color:#00E5FF; }
+body.dark-mode .float-menu ul li { color:#00E5FF; }
+body.dark-mode .float-menu ul li:hover { color:#66eaff; background: rgba(0,229,255,0.04); }
+body.dark-mode .comandos-intro { color:#cfeeff; }
+body.dark-mode .mini-desc {
+  background: rgba(0,0,0,0.18);
+  color:#cfeeff;
+  border-left: 3px solid rgba(0,229,255,0.18);
+}
+body.dark-mode .mini-desc code { background:#071018; color:#00E5FF; }
+

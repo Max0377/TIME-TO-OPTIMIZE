@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manutenção e Configuração - TIME TO OPTIMIZE</title>
+
+  <!-- Fontes e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="manutencao.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="../imagens/logo.png" alt="Logo Opticore">
+        <span id="titleText">TIME TO OPTIMIZE</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+          <li><a href="../suporte/suporte.html">Suporte</a></li>
+          <li>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ <!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos do Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Backup -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+  <!-- ===== Canvas ===== -->
+  <canvas id="lightCanvas"></canvas>
+
+  <!-- ===== Conteúdo Principal ===== -->
+  <main>
+    <h1 id="mainTitle">🛠️ Manutenção e Configuração</h1>
+    <p class="subtext">Aqui você encontra dicas e orientações para manter seu computador em perfeito funcionamento.</p>
+
+    <div class="cards">
+
+      <!-- Card 1: Limpeza de Arquivos -->
+      <div class="card">
+        <i class="fa-solid fa-broom"></i>
+        <h3>LIMPEZA DE ARQUIVOS – JOGANDO LIXO FORA</h3>
+        <p>Seu computador acumula lixo digital, tipo:</p>
+        <ul>
+          <li>Arquivos temporários (coisas que o sistema cria e esquece de apagar)</li>
+          <li>Programas que você não usa mais</li>
+          <li>Fotos repetidas, downloads antigos, vídeos que você nem lembra que estão lá</li>
+        </ul>
+        <p><strong>O que fazer:</strong></p>
+        <ul>
+          <li>Vá na lixeira e esvazie.</li>
+          <li>Use um programa tipo CCleaner ou o Sensor de Armazenamento do Windows.</li>
+          <li>Vá na pasta de Downloads e apague o que você não usa.</li>
+          <li>Desinstale programas que você nem sabe o que são.</li>
+        </ul>
+        <p><strong>Resumo simples:</strong> se não usa, apaga. Se não sabe o que é, pesquisa. Se for lixo, joga fora.</p>
+      </div>
+
+      <!-- Card 2: Otimização de Hardware -->
+      <div class="card">
+        <i class="fa-solid fa-microchip"></i>
+        <h3>OTIMIZAÇÃO DE HARDWARE – FAZENDO A MÁQUINA RESPIRAR</h3>
+        <p>Seu computador é como um carro: se você nunca olha o motor, uma hora ele para. Otimizar o hardware é ajudar ele a funcionar melhor.</p>
+        <p><strong>Dicas básicas:</strong></p>
+        <ul>
+          <li>Memória RAM cheia = computador lento
+            <ul>
+              <li>Feche programas que não está usando.</li>
+              <li>Não abra 300 abas no navegador.</li>
+            </ul>
+          </li>
+          <li>HD cheio = computador travado
+            <ul>
+              <li>Deixe pelo menos 20% do HD livre.</li>
+            </ul>
+          </li>
+          <li>Computador esquentando muito = perigo
+            <ul>
+              <li>Limpe a ventoinha e entradas de ar com pincel ou ar comprimido.</li>
+              <li>Não use o notebook na cama ou travesseiro.</li>
+            </ul>
+          </li>
+          <li>Lentidão ao ligar ou abrir programas
+            <ul>
+              <li>Desative programas que abrem sozinhos quando liga o PC.</li>
+              <li>Use o Gerenciador de Tarefas &gt; Inicializar no Windows.</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Resumo simples:</strong> não entupa a máquina, feche o que não usa e não deixe ela virar um forno. Faça isso todo mês ou a cada 2 semanas.</p>
+      </div>
+
+      <!-- Card 3: Segurança -->
+      <div class="card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>SEGURANÇA – NÃO SEJA ENGANADO</h3>
+        <p>Tem muita armadilha na internet. Um clique errado e pronto: vírus, roubo de senha ou propaganda chata aparecendo toda hora.</p>
+        <p><strong>Faça o básico:</strong></p>
+        <ul>
+          <li>Tenha um antivírus confiável (Windows Defender já ajuda bastante).</li>
+          <li>Não clique em links estranhos ou e-mails suspeitos.</li>
+          <li>Não baixe programas de sites esquisitos.</li>
+          <li>Mantenha o Windows e os programas atualizados.</li>
+          <li>Use senhas diferentes para cada coisa (use um gerenciador de senhas se precisar).</li>
+        </ul>
+        <p><strong>Resumo simples:</strong> desconfie de tudo, não clique em qualquer coisa e atualize sempre.</p>
+        <p><strong>Checklist rápido:</strong></p>
+        <ul>
+          <li>Esvaziar a lixeira</li>
+          <li>Limpar a pasta de downloads</li>
+          <li>Atualizar o Windows</li>
+          <li>Atualizar antivírus</li>
+          <li>Verificar programas na inicialização</li>
+          <li>Fazer escaneamento com antivírus</li>
+          <li>Desinstalar programas inúteis</li>
+          <li>Limpar teclado e tela</li>
+          <li>Verificar se o HD/SSD tem espaço livre</li>
+          <li>Fazer backup (HD externo, nuvem etc.)</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="manutencao.js"></script>
+</body>
+</html>

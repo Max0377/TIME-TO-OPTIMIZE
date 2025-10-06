@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produtividade - TIME TO OPTIMIZE</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="produtividade.css">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../imagens/logo.png" alt="Logo Opticore">
+      <span id="titleText">TIME TO OPTIMIZE</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../suporte/suporte.html">Suporte</a></li>
+        <li>
+          <div class="hamburger" id="hamburger" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos do Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Backup -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+<canvas id="lightCanvas"></canvas>
+
+<!-- ===== Conteúdo Principal ===== -->
+<main>
+
+  <!-- Atalhos de Teclado -->
+  <section class="section">
+    <h2>⌨️ Atalhos de Teclado do Windows</h2>
+    <p>Domine os atalhos do Windows para economizar tempo e navegar de forma eficiente. Aprenda aos poucos e pratique no dia a dia!</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <h3>🔹 Atalhos Básicos</h3>
+        <ul>
+          <li><span class="key">Ctrl + C</span> → Copiar</li>
+          <li><span class="key">Ctrl + V</span> → Colar</li>
+          <li><span class="key">Ctrl + X</span> → Recortar</li>
+          <li><span class="key">Ctrl + Z</span> → Desfazer</li>
+          <li><span class="key">Ctrl + Y</span> → Refazer</li>
+          <li><span class="key">Ctrl + S</span> → Salvar</li>
+          <li><span class="key">Ctrl + A</span> → Selecionar tudo</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🔹 Navegação entre janelas</h3>
+        <ul>
+          <li><span class="key">Alt + Tab</span> → Alternar janelas</li>
+          <li><span class="key">Windows + Tab</span> → Todas as janelas</li>
+          <li><span class="key">Windows + D</span> → Mostrar área de trabalho</li>
+          <li><span class="key">Alt + F4</span> → Fechar janela ativa</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🔹 Captura de tela</h3>
+        <ul>
+          <li><span class="key">PrtScn</span> → Captura tela inteira</li>
+          <li><span class="key">Alt + PrtScn</span> → Captura janela ativa</li>
+          <li><span class="key">Windows + PrtScn</span> → Salva automaticamente</li>
+          <li><span class="key">Windows + S</span> → Abrir pesquisa</li>
+          <li><span class="key">Windows + E</span> → Abrir Explorador</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="tips">💡 Dica: Use 2 ou 3 atalhos por dia e pratique. Com o tempo, eles se tornam automáticos!</p>
+  </section>
+
+  <!-- Organização de Arquivos -->
+  <section class="section">
+    <h2>📂 Organização e Gerenciamento de Arquivos</h2>
+    <p>Manter seus arquivos bem organizados ajuda você a economizar tempo e evitar perder documentos importantes.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <h3>🔹 Criando pastas</h3>
+        <ul>
+          <li>Abrir Explorador (<b>Windows + E</b>).</li>
+          <li>Escolher local.</li>
+          <li>Botão direito → <b>Novo → Pasta</b>.</li>
+          <li>Digite nome claro.</li>
+          <li>Dica: use números ou datas.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🔹 Nomeando arquivos</h3>
+        <ul>
+          <li>Nomes descritivos ex.: <i>Relatorio_Julho.xlsx</i></li>
+          <li>Evite caracteres especiais / \ * ? &lt; &gt;</li>
+          <li>Adicione data ou versão se necessário</li>
+          <li>Nomes curtos e objetivos</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🔹 Movendo e copiando</h3>
+        <ul>
+          <li>Selecionar → <b>Ctrl + C</b> ou <b>Ctrl + X</b></li>
+          <li>Colar na pasta desejada → <b>Ctrl + V</b></li>
+          <li>Arrastar e soltar funciona</li>
+          <li>Use <b>Ctrl + Z</b> para desfazer</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🔹 Backup e Nuvem</h3>
+        <ul>
+          <li>OneDrive, Google Drive ou Dropbox</li>
+          <li>Sincronização automática</li>
+          <li>Backup em HD externo regularmente</li>
+          <li>Organize backups por data</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="produtividade.js"></script>
+</body>
+</html>

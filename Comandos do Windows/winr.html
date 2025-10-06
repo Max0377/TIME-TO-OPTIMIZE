@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Windows + R </title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS compartilhado -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- CSS específico do Windows + R -->
+  <link rel="stylesheet" href="winr.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../imagens/logo.png" alt="Logo Opticore">
+      <span id="titleText">TIME TO OPTIMIZE</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../sobre/Sobre.html">Sobre Nós</a></li>
+        <li><a href="../suporte/Suporte.html">Suporte</a></li>
+        <div class="hamburger" id="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">CMD (Prompt de Comando)</li>
+    <li id="openPowerShell" role="button" tabindex="0">PowerShell</li>
+    <li id="openWinR" role="button" tabindex="0">Windows + R</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+
+<!-- ===== Modal Backup e Salvamento em Nuvem ===== -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+
+<!-- Canvas -->
+<canvas id="lightCanvas"></canvas>
+<!-- ===== Windows + R Detalhado ===== -->
+<section class="bloco-winr">
+  <h2 style="text-align:center; margin:30px 0;">🖱 Windows + R: Tutoriais Detalhados</h2>
+  <p style="text-align:center;">
+    O atalho <b>Windows + R</b> abre a janela "Executar". Abaixo você verá como usar cada comando para limpar, otimizar, ajustar gráficos ou gerenciar o sistema, com vídeo explicativo para Windows 10 e 11.
+  </p> <br>
+
+  <!-- ===== CMD ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 cmd – Prompt de Comando</h3>
+      <p>O CMD permite digitar comandos do Windows para limpeza, otimização e ajustes do sistema.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>cmd</code>.</li>
+        <li>Pressione Enter.</li>
+        <li>O Prompt de Comando será aberto pronto para digitar comandos.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="680" src="https://www.youtube.com/embed/_KppTh30uOw" title="Open Command Prompt using Shortcut #cmd #shortcut #shorts #tricks #windows" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== PowerShell ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 powershell – PowerShell</h3>
+      <p>Versão avançada do CMD, com mais recursos para automação, limpeza e otimização.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>powershell</code>.</li>
+        <li>Pressione Enter.</li>
+        <li>O PowerShell abrirá, pronto para executar comandos de sistema.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="680" src="https://www.youtube.com/embed/MCO_UbLu0u8" title="How to Run PowerShell (Windows)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Limpeza ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 cleanmgr – Limpeza de Disco</h3>
+      <p>Apaga arquivos temporários, cache, lixeira e logs antigos.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>cleanmgr</code>.</li>
+        <li>Escolha a unidade (geralmente <b>C:</b>).</li>
+        <li>Marque os itens que deseja apagar.</li>
+        <li>Clique em <b>OK</b> para liberar espaço.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_CLEANMGR" title="Tutorial cleanmgr Windows" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Configuração de Inicialização ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 msconfig – Configuração do Sistema</h3>
+      <p>Gerencia quais programas iniciam com o Windows, ajudando a acelerar o computador.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>msconfig</code>.</li>
+        <li>Na aba <b>Inicialização</b>, veja os programas que iniciam junto com o Windows.</li>
+        <li>Desmarque programas desnecessários e clique em <b>OK</b>.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_MSCONFIG" title="Tutorial msconfig Windows" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Gerenciador de Tarefas ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 taskmgr – Gerenciador de Tarefas</h3>
+      <p>Permite encerrar programas que estão travando ou usando muita memória, além de gerenciar inicialização.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>taskmgr</code>.</li>
+        <li>Abra a aba <b>Inicializar</b> para gerenciar programas que iniciam com o Windows.</li>
+        <li>Use a aba <b>Processos</b> para encerrar programas que estão travando.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_TASKMGR" title="Tutorial taskmgr Windows" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Diagnóstico DirectX ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 dxdiag – Diagnóstico do DirectX</h3>
+      <p>Mostra informações da placa de vídeo, drivers e recursos gráficos.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>dxdiag</code>.</li>
+        <li>Pressione Enter.</li>
+        <li>Veja informações sobre placa de vídeo, drivers e versões do DirectX.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_DXDIAG" title="Tutorial dxdiag Windows" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Serviços do Windows ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 services.msc – Serviços do Windows</h3>
+      <p>Permite habilitar ou desabilitar serviços do sistema.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>services.msc</code>.</li>
+        <li>Pressione Enter.</li>
+        <li>Veja a lista de serviços e gerencie os que não são necessários.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_SERVICES" title="Tutorial services.msc Windows" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Painel de Controle ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 control – Painel de Controle</h3>
+      <p>Acesso rápido às configurações clássicas do Windows.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>control</code>.</li>
+        <li>Pressione Enter.</li>
+        <li>Use o Painel de Controle para acessar configurações de sistema, programas, hardware e rede.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_CONTROL" title="Tutorial control Windows" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Pasta TEMP ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 %temp% – Pasta de Arquivos Temporários</h3>
+      <p>Abre a pasta onde o Windows guarda arquivos temporários. Você pode apagá-los manualmente para liberar espaço.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>%temp%</code>.</li>
+        <li>Pressione Enter.</li>
+        <li>Selecione e apague arquivos antigos que não são mais necessários.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_TEMP" title="Tutorial %temp% Windows" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ===== Programas e Recursos ===== -->
+  <div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+    <div class="texto" style="flex:1;">
+      <h3>🔹 appwiz.cpl – Programas e Recursos</h3>
+      <p>Permite desinstalar softwares rapidamente.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Pressione <b>Windows + R</b> e digite <code>appwiz.cpl</code>.</li>
+        <li>Pressione Enter.</li>
+        <li>Escolha os programas que deseja remover e clique em <b>Desinstalar</b>.</li>
+      </ol>
+    </div>
+    <div class="video" style="flex:1;">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_APPWIZ" title="Tutorial appwiz.cpl Windows" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</section>
+
+
+ 
+
+<!-- Scripts -->
+<script src="../script.js"></script> <!-- script geral -->
+<script src="winr.js"></script> <!-- script específico -->
+</body>
+</html>

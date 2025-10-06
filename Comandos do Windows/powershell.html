@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PowerShell - TIME TO OPTIMIZE</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS compartilhado -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="powershell.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../imagens/logo.png" alt="Logo Opticore">
+      <span id="titleText">TIME TO OPTIMIZE</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../suporte/suporte.html">Suporte</a></li>
+        <div class="hamburger" id="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">CMD (Prompt de Comando)</li>
+    <li id="openPowerShell" role="button" tabindex="0">PowerShell</li>
+    <li id="openWinR" role="button" tabindex="0">Windows + R</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+
+<!-- ===== Modal Backup e Salvamento em Nuvem ===== -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+
+<!-- Canvas -->
+<canvas id="lightCanvas"></canvas>
+
+<main style="padding:20px;">
+  <h1 style="text-align:center; margin-bottom:20px;">🖥 PowerShell</h1>
+  <p style="text-align:center; max-width:900px; margin:auto;">
+    O PowerShell é como uma versão “turbinada” do CMD. Ele não só executa comandos simples, mas também automatiza tarefas, acessa recursos que o CMD não alcança e permite otimização, limpeza e segurança do Windows.
+  </p>
+
+<!-- ===== PowerShell: Limpeza ===== -->
+<h2 style="text-align:center; margin:30px 0;">🧹 PowerShell: Comandos para Limpeza do Windows</h2>
+<p style="text-align:center;">
+  Com o PowerShell você pode limpar o Windows de forma rápida e segura.  
+  Apaga arquivos temporários, esvazia a lixeira, limpa caches do sistema e resolve problemas de navegação.
+</p>
+
+<!-- Windows 10 – Apagar arquivos temporários -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Remover arquivos temporários</h3>
+    <p>Apaga arquivos que o Windows cria apenas para uso temporário.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>Remove-Item -Path $env:TEMP\* -Recurse -Force</code></li>
+      <li>Pressione Enter. Todos os arquivos temporários serão apagados, liberando espaço.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/wxpRH8vsH6c?si=77EYuU0Wb9pm8mHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Apagar arquivos temporários -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Remover arquivos temporários</h3>
+    <p>Funciona igual ao Windows 10, mas o Windows 11 já automatiza parte dessas tarefas com o Sensor de Armazenamento.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>Remove-Item -Path $env:TEMP\* -Recurse -Force</code></li>
+      <li>Pressione Enter para limpar arquivos temporários antigos.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/7kQ4jsdtJLc?si=EgSxbv7rVm5X7vir" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 10 – Esvaziar Lixeira -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Esvaziar a Lixeira</h3>
+    <p>Apaga todos os arquivos da Lixeira sem precisar abri-la.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>Clear-RecycleBin -Force</code></li>
+      <li>Pressione Enter. Todos os arquivos da lixeira desaparecerão.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_RECYCLE_W10" title="Tutorial esvaziar lixeira Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Esvaziar Lixeira -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Esvaziar a Lixeira</h3>
+    <p>Funciona igual ao Windows 10. Útil para limpeza rápida sem abrir a interface.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>Clear-RecycleBin -Force</code></li>
+      <li>Pressione Enter para limpar a Lixeira.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_RECYCLE_W11" title="Tutorial esvaziar lixeira Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+<!-- Windows 10 – Limpar cache DNS -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Limpar cache DNS</h3>
+    <p>Resolve problemas de navegação apagando informações antigas de sites.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>Clear-DnsClientCache</code></li>
+      <li>Pressione Enter. Isso pode corrigir erros ao acessar sites.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_DNS_W10" title="Tutorial limpar cache DNS Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Limpar cache DNS -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Limpar cache DNS</h3>
+    <p>Mesma função do Windows 10. Útil para corrigir problemas de conexão e navegação.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>Clear-DnsClientCache</code></li>
+      <li>Pressione Enter para limpar o cache DNS.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_DNS_W11" title="Tutorial limpar cache DNS Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- ===== PowerShell: Otimização ===== -->
+<h2 style="text-align:center; margin:30px 0;">⚡ PowerShell: Comandos para Otimização do Windows</h2>
+<p style="text-align:center;">
+  Com o PowerShell você pode acelerar o Windows, corrigir pequenos erros e melhorar o desempenho geral do PC.  
+  Cada comando abaixo funciona tanto no Windows 10 quanto no 11, com pequenas diferenças em interfaces ou nomes.
+</p>
+
+<!-- Windows 10 – Gerenciar inicialização -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Gerenciar programas de inicialização</h3>
+    <p>Mostra e permite desativar programas que abrem junto com o Windows, acelerando o boot.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>Get-StartupItem</code> (lista programas que iniciam com o Windows).</li>
+      <li>Para desativar, use: <code>Disable-StartupItem -Name "NomeDoPrograma"</code></li>
+      <li>Feche e reinicie o Windows para aplicar.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_STARTUP_W10" title="Tutorial gerenciar inicialização Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Gerenciar inicialização -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Gerenciar programas de inicialização</h3>
+    <p>Funciona igual ao Windows 10, mas o Windows 11 centraliza a gestão no Gerenciador de Tarefas.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>Get-StartupItem</code> para listar programas.</li>
+      <li>Para desativar: <code>Disable-StartupItem -Name "NomeDoPrograma"</code></li>
+      <li>Reinicie o PC para aplicar alterações.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_STARTUP_W11" title="Tutorial gerenciar inicialização Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 10 – Verificar energia -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Relatório de Energia</h3>
+    <p>Detecta programas que consomem muita energia, útil em notebooks.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>powercfg /energy</code> e pressione Enter.</li>
+      <li>O sistema vai analisar por 60 segundos e criar o arquivo <code>energy-report.html</code> em C:\Windows\System32.</li>
+      <li>Abra o arquivo no navegador para ver recomendações de otimização.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_ENERGY_W10" title="Tutorial relatório de energia Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Verificar energia -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Relatório de Energia</h3>
+    <p>Funciona igual ao Windows 10, mas pode indicar problemas com o modo de espera moderno (<i>modern standby</i>).</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>powercfg /energy</code> e pressione Enter.</li>
+      <li>Verifique o arquivo <code>energy-report.html</code> para otimizações.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_ENERGY_W11" title="Tutorial relatório de energia Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 10 – Verificar integridade do sistema -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Verificar arquivos do sistema</h3>
+    <p>Detecta e corrige arquivos do Windows corrompidos, prevenindo travamentos e erros.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>sfc /scannow</code> e pressione Enter.</li>
+      <li>O sistema verifica todos os arquivos protegidos e corrige problemas automaticamente.</li>
+      <li>Processo pode levar de 10 a 30 minutos.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_SFC_W10" title="Tutorial verificar arquivos sistema Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Verificar integridade do sistema -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Verificar arquivos do sistema</h3>
+    <p>Mesma função do Windows 10, útil para corrigir erros após atualizações ou apps do sistema.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como administrador.</li>
+      <li>Digite: <code>sfc /scannow</code> e pressione Enter.</li>
+      <li>Aguarde a conclusão e veja os arquivos corrigidos.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_SFC_W11" title="Tutorial verificar arquivos sistema Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- ===== PowerShell: Qualidade Gráfica ===== -->
+<h2 style="text-align:center; margin:30px 0;">🎨 PowerShell: Comandos para Ajustes de Qualidade Gráfica</h2>
+<p style="text-align:center;">
+  Com o PowerShell você pode acessar informações da placa de vídeo e configurações de exibição rapidamente.  
+  É útil para melhorar a qualidade visual ou ajustar a tela para melhor desempenho em PCs mais lentos.
+</p>
+
+<!-- Windows 10 – Informações da placa de vídeo -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Ver informações da placa de vídeo</h3>
+    <p>Mostra o nome da placa, versão do driver e resolução atual, útil para verificar compatibilidade de jogos e programas gráficos.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Get-WmiObject Win32_VideoController | Format-List Name, DriverVersion, VideoModeDescription</code> e pressione Enter.</li>
+      <li>Confira as informações no resultado exibido.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_VGA_W10" title="Tutorial informações placa de vídeo Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Informações da placa de vídeo -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Ver informações da placa de vídeo</h3>
+    <p>Mesma função do Windows 10. Útil para saber detalhes da placa antes de jogos ou programas gráficos.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Get-WmiObject Win32_VideoController | Format-List Name, DriverVersion, VideoModeDescription</code>.</li>
+      <li>Leia as informações exibidas para verificar drivers e resolução.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_VGA_W11" title="Tutorial informações placa de vídeo Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 10 – Abrir configuração de resolução -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Abrir configuração de resolução</h3>
+    <p>Permite alterar resolução, orientação e taxa de atualização da tela.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Start-Process "desk.cpl"</code> e pressione Enter.</li>
+      <li>A janela de Configurações de Tela será aberta para ajustes.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_RES_W10" title="Tutorial resolução Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Abrir configuração de resolução -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Abrir configuração de resolução</h3>
+    <p>Mesma função, mas agora o sistema prefere usar o app Configurações. Permite ajustar brilho, HDR e múltiplos monitores.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Start-Process "desk.cpl"</code> ou <code>Start-Process ms-settings:display</code> para abrir configurações avançadas.</li>
+      <li>Ajuste resolução, brilho, HDR e layout de múltiplos monitores.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_RES_W11" title="Tutorial resolução Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 10 – Ajustar escala e layout -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Ajustar escala e layout</h3>
+    <p>Modifica tamanho de textos, ícones e janelas para melhorar leitura ou encaixar mais conteúdo na tela.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Start-Process ms-settings:display</code> e pressione Enter.</li>
+      <li>Ajuste a escala (100%, 125%, etc.) conforme preferência.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_SCALE_W10" title="Tutorial escala e layout Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Ajustar escala e layout -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Ajustar escala e layout</h3>
+    <p>Mesma função, mas o Windows 11 oferece opções extras como HDR, brilho automático e suporte a múltiplos monitores.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Start-Process ms-settings:display</code> e pressione Enter.</li>
+      <li>Escolha a escala e layout ideais para seu monitor.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_SCALE_W11" title="Tutorial escala e layout Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- ===== PowerShell: Segurança ===== -->
+<h2 style="text-align:center; margin:30px 0;">🛡 PowerShell: Comandos de Segurança</h2>
+<p style="text-align:center;">
+  O PowerShell permite executar comandos de segurança diretamente, sem precisar abrir múltiplas janelas.  
+  Você pode remover malwares, verificar conexões ativas e gerenciar usuários do sistema.
+</p>
+<br>
+<!-- Windows 10 – Executar MRT (Remoção de Malware) -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Executar MRT (Malware Removal Tool)</h3>
+    <p>Ferramenta oficial da Microsoft que detecta e remove malwares do computador.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Start-Process MRT</code> e pressione Enter.</li>
+      <li>Siga as instruções da ferramenta para escanear e remover ameaças.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_MRT_W10" title="Tutorial MRT Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Executar MRT -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Executar MRT</h3>
+    <p>Funciona igual ao Windows 10. Ideal para escaneamentos rápidos quando suspeitar de malware.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Start-Process MRT</code> e pressione Enter.</li>
+      <li>Execute o escaneamento e siga as instruções para remover malwares.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_MRT_W11" title="Tutorial MRT Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 10 – Ver conexões ativas -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Ver conexões ativas</h3>
+    <p>Lista todas as conexões TCP abertas, útil para monitorar tráfego de rede suspeito.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Get-NetTCPConnection</code> e pressione Enter.</li>
+      <li>Verifique as conexões ativas e portas em uso.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_NET_W10" title="Tutorial conexões ativas Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Ver conexões ativas -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Ver conexões ativas</h3>
+    <p>Mesmo funcionamento do Windows 10, útil para monitorar tráfego de rede e detectar apps suspeitos.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell.</li>
+      <li>Digite: <code>Get-NetTCPConnection</code> e pressione Enter.</li>
+      <li>Confira as conexões e identifique possíveis irregularidades.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_NET_W11" title="Tutorial conexões ativas Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 10 – Gerenciar usuários -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 10 – Gerenciar usuários</h3>
+    <p>Permite listar usuários e alterar senhas direto pelo PowerShell.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como Administrador.</li>
+      <li>Para listar usuários: <code>Get-LocalUser</code></li>
+      <li>Para alterar senha: <code>Set-LocalUser -Name "usuario" -Password (ConvertTo-SecureString "nova_senha" -AsPlainText -Force)</code></li>
+      <li>Substitua <code>usuario</code> e <code>nova_senha</code> pelos valores corretos.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_USERS_W10" title="Tutorial gerenciar usuários Windows 10" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Windows 11 – Gerenciar usuários -->
+<div class="linha" style="display:flex; gap:20px; align-items:flex-start; margin-bottom:40px;">
+  <div class="texto" style="flex:1;">
+    <h3>🔹 Windows 11 – Gerenciar usuários</h3>
+    <p>Funciona igual ao Windows 10, mas o Windows 11 também permite alterar senhas via Configurações → Contas.</p>
+    <h4>Como usar:</h4>
+    <ol>
+      <li>Abra o PowerShell como Administrador.</li>
+      <li>Para listar usuários: <code>Get-LocalUser</code></li>
+      <li>Para alterar senha: <code>Set-LocalUser -Name "usuario" -Password (ConvertTo-SecureString "nova_senha" -AsPlainText -Force)</code></li>
+      <li>Substitua <code>usuario</code> e <code>nova_senha</code> pelos valores desejados.</li>
+    </ol>
+  </div>
+  <div class="video" style="flex:1;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_USERS_W11" title="Tutorial gerenciar usuários Windows 11" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+   </section>
+
+<script src="../script.js"></script>
+<script src="powershell.js"></script>
+</body>
+</html>

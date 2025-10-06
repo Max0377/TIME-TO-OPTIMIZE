@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> TIME TO OPTIMIZE </title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="imagens/logo.png" alt="Logo Opticore">
+      <span id="titleText">TIME TO OPTIMIZE</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="suporte/suporte.html">Suporte</a></li>
+        <div class="hamburger" id="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos do Windows</li>
+    <li><a href="Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="Menu/segurança.html">Segurança</a></li>
+    <li><a href="Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Backup -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+<!-- Canvas -->
+<canvas id="lightCanvas"></canvas>
+
+<!-- Banner -->
+<div class="banner-container">
+  <div class="banner">
+    <img src="imagens/imagem-1.jpeg" class="active" alt="Banner 1">
+    <img src="imagens/imagem-2.jpeg" alt="Banner 2">
+    <img src="imagens/imagem-3.jpeg" alt="Banner 3">
+    <img src="imagens/imagem-4.jpeg" alt="Banner 4">
+    <img src="imagens/imagem-5.jpeg" alt="Banner 5">
+    <div class="banner-overlay" aria-hidden="true"></div>
+  </div>
+  <div class="dots-container" aria-hidden="true">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<main>
+  <h1 id="mainTitle"></h1>
+  <p>Bem-vindo à TERRA SEM MALES – sua central de tecnologia e suporte.</p>
+</main>
+
+  <p class="intro-text">
+        Nos dias atuais, os computadores desempenham um papel essencial em praticamente todas as áreas da vida, seja para estudos, trabalho ou lazer. No entanto, é comum que com o tempo essas máquinas apresentem lentidão, acúmulo de arquivos desnecessários, falhas de segurança e dificuldades que comprometem a experiência do usuário. Foi pensando nesse cenário que nasceu este projeto, desenvolvido por um grupo de estudantes da área de informática, com o objetivo de oferecer conteúdos, dicas e soluções práticas voltadas para a otimização e segurança de computadores.<br><br>
+    Nossa iniciativa surgiu dentro do ambiente acadêmico, onde identificamos uma necessidade constante: muitas pessoas não sabem como manter seus computadores funcionando de forma eficiente e segura. Dessa forma, decidimos unir nossos conhecimentos e experiências para criar um espaço acessível, informativo e útil, tanto para quem é iniciante quanto para aqueles que já possuem mais familiaridade com tecnologia.<br><br>
+    Aqui você encontrará materiais que abrangem desde ações simples, como a limpeza de arquivos temporários e ajustes básicos de configuração, até orientações mais avançadas, envolvendo ferramentas de segurança, comandos do sistema operacional e uso de softwares específicos. Nosso compromisso é transformar o conhecimento técnico em informações claras, que qualquer pessoa consiga aplicar no dia a dia, sem complicações.<br><br>
+    Além disso, acreditamos que a segurança digital deve ser tratada como prioridade. Em um mundo cada vez mais conectado, proteger seus dados pessoais e informações sensíveis é fundamental. Por isso, o site também reúne boas práticas de segurança, como prevenção contra vírus, uso de programas confiáveis, monitoramento de atualizações e recomendações sobre navegação responsável.<br><br>
+    Nosso grupo é formado por estudantes comprometidos em aprender e compartilhar conhecimento. Trabalhamos de forma colaborativa, trazendo diferentes perspectivas e experiências para enriquecer o conteúdo aqui disponibilizado. Esse projeto não é apenas uma atividade acadêmica, mas também um espaço de aprendizado contínuo, no qual buscamos crescer junto com nossos leitores e usuários.<br><br>
+    Queremos que este site seja mais do que apenas um repositório de informações: nossa meta é criar uma comunidade onde estudantes, profissionais e usuários comuns possam encontrar respostas, aprender e trocar experiências sobre como manter seus computadores rápidos, seguros e confiáveis.<br><br>
+    Seja muito bem-vindo! Explore nossos conteúdos, aplique as dicas e descubra como pequenas ações podem transformar o desempenho do seu computador e aumentar a sua segurança digital.
+  </p>
+</main>
+
+<!-- JS externo -->
+<script src="script.js"></script>
+</body>
+</html>

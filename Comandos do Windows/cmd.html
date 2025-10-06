@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CMD - TIME TO OPTIMIZE</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="cmd.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../imagens/logo.png" alt="Logo Opticore">
+      <span id="titleText">TIME TO OPTIMIZE</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../suporte/suporte.html">Suporte</a></li>
+        <div class="hamburger" id="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">CMD (Prompt de Comando)</li>
+    <li id="openPowerShell" role="button" tabindex="0">PowerShell</li>
+    <li id="openWinR" role="button" tabindex="0">Windows + R</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+
+<!-- ===== Modal Backup e Salvamento em Nuvem ===== -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+<!-- Canvas -->
+<canvas id="lightCanvas"></canvas>
+
+<main style="padding:20px;">
+  <h1 style="text-align:center; margin-bottom:20px;">🖥️ CMD (Prompt de Comando)</h1>
+
+  <div style="display:flex; justify-content:center; margin:20px 0;">
+    <p style="text-align:center; max-width:800px;">
+      A importância do CMD está justamente nesse acesso privilegiado e simplificado ao sistema. Ele funciona como uma chave mestra capaz de abrir portas que não se abrem apenas com cliques comuns. Em situações em que o computador apresenta lentidão, falhas de rede ou pequenos erros, o CMD pode ser visto como um mecânico de confiança, capaz de identificar e corrigir problemas que muitas vezes não aparecem nos menus tradicionais. Além disso, ele também pode ser usado para automatizar tarefas repetitivas. Imagine alguém que todos os dias precisa acender as luzes, abrir janelas e ligar a televisão manualmente; com o CMD, é possível criar um comando que faça tudo isso de uma só vez, como se fosse um interruptor mágico que economiza tempo e esforço. Embora pareça complicado no início, o CMD é uma das ferramentas mais poderosas para quem deseja <b>otimizar, diagnosticar e corrigir problemas no computador</b>, sem precisar instalar programas adicionais.
+    </p>
+  </div>
+
+  <section class="bloco-cmd">
+    <h2>🧹 CMD: Comandos para Limpeza do Windows</h2>
+    <p>
+      O CMD permite executar comandos que ajudam a limpar o Windows de forma rápida e segura, sem precisar abrir várias janelas ou programas extras.  
+      Com esses comandos, você pode apagar arquivos temporários, esvaziar a lixeira, remover logs antigos e liberar espaço no disco.  
+      É como dar uma faxina no computador, deixando-o mais leve e rápido, sem precisar instalar nada.
+    </p>
+
+    <style>
+      .linha-flex {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+      .linha-flex .texto, .linha-flex .video {
+        flex: 1 1 400px;
+      }
+      .linha-flex .texto h3 {
+        margin-top: 0;
+      }
+    </style>
+
+    <!-- cleanmgr -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 10 – cleanmgr (Limpeza de Disco)</h3>
+        <p>Abre uma ferramenta do Windows que apaga arquivos desnecessários, como temporários ou da lixeira.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Pressione <b>Windows + R</b>, digite <code>cmd</code> e pressione Enter.</li>
+          <li>Digite <code>cleanmgr</code> e pressione Enter.</li>
+          <li>Escolha o disco C: e marque os arquivos que deseja apagar.</li>
+          <li>Clique em <b>OK</b> para liberar espaço.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/7JlWYfujvS0"
+          title="How To Run Disk Cleanup From Command Prompt"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 11 – cleanmgr (Limpeza de Disco)</h3>
+        <p>Ainda funciona, mas a Microsoft recomenda usar <b>Configurações → Sistema → Armazenamento → Sensor de Armazenamento</b>.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>cleanmgr</code> e pressione Enter.</li>
+          <li>Escolha o disco C: e marque os arquivos que deseja apagar.</li>
+          <li>Clique em <b>OK</b> para liberar espaço.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/7JlWYfujvS0"
+          title="How To Run Disk Cleanup From Command Prompt (também para Windows 11)"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <!-- del /q /f /s %temp%\* -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 10 – del /q /f /s %temp%\* (Apagar arquivos temporários)</h3>
+        <p>Apaga arquivos temporários do sistema, liberando espaço sem afetar a pasta.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>del /q /f /s %temp%\*</code> e pressione Enter.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/TdZ_0KwtLjE"
+          title="Cleaning up PC with CMD commands"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 11 – del /q /f /s %temp%\* (Apagar arquivos temporários)</h3>
+        <p>Funciona igual ao Windows 10. Também é possível usar Configurações → Armazenamento → Arquivos temporários.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>del /q /f /s %temp%\*</code> e pressione Enter.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/TdZ_0KwtLjE"
+          title="Cleaning up PC with CMD commands"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <!-- rd /s /q %temp% -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 10 – rd /s /q %temp% (Apagar pasta Temp inteira)</h3>
+        <p>Limpa toda a pasta de arquivos temporários, incluindo subpastas. A pasta será recriada automaticamente.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>rd /s /q %temp%</code> e pressione Enter.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/TdZ_0KwtLjE"
+          title="Cleaning up PC with CMD commands"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 11 – rd /s /q %temp% (Apagar pasta Temp inteira)</h3>
+        <p>Funciona igual ao Windows 10.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>rd /s /q %temp%</code> e pressione Enter.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/TdZ_0KwtLjE"
+          title="Cleaning up PC with CMD commands"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <!-- rd /s /q C:\$Recycle.bin -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 10 – rd /s /q C:\$Recycle.bin (Esvaziar Lixeira)</h3>
+        <p>Apaga todos os arquivos da lixeira sem precisar abri-la.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>rd /s /q C:\$Recycle.bin</code> e pressione Enter.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/TdZ_0KwtLjE"
+          title="Cleaning up PC with CMD commands"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 11 – rd /s /q C:\$Recycle.bin (Esvaziar Lixeira)</h3>
+      <p>Funciona igual ao Windows 10.</p>
+      <h4>Como usar:</h4>
+      <ol>
+        <li>Abra o CMD.</li>
+        <li>Digite <code>rd /s /q C:\$Recycle.bin</code> e pressione Enter.</li>
+      </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/TdZ_0KwtLjE"
+          title="Cleaning up PC with CMD commands"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <!-- del /s /f /q C:\Windows\Logs\* -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 10 – del /s /f /q C:\Windows\Logs\* (Apagar logs antigos)</h3>
+        <p>Apaga relatórios antigos do Windows que não são mais necessários.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>del /s /f /q C:\Windows\Logs\*</code> e pressione Enter.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/7JlWYfujvS0"
+          title="How To Run Disk Cleanup From Command Prompt"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 11 – del /s /f /q C:\Windows\Logs\* (Apagar logs antigos)</h3>
+        <p>Funciona igual ao Windows 10.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>del /s /f /q C:\Windows\Logs\*</code> e pressione Enter.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/7JlWYfujvS0"
+          title="How To Run Disk Cleanup From Command Prompt"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- Seção de Ajustes Gráficos -->
+  <section class="bloco-cmd">
+    <h2>🎨 CMD: Comandos para Ajustes de Qualidade Gráfica</h2>
+    <p>
+      Cada comando abaixo abre uma ferramenta ou configuração que permite melhorar ou reduzir a qualidade gráfica, ajustando desempenho ou visual.
+    </p>
+
+    <!-- dxdiag -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 dxdiag – Diagnóstico do DirectX</h3>
+        <p>Exibe informações detalhadas sobre a placa de vídeo, drivers, memória e recursos gráficos.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD (Windows + R → digite <code>cmd</code>).</li>
+          <li>Digite <code>dxdiag</code> e pressione Enter.</li>
+          <li>Verifique as abas “Sistema” e “Exibir” para detalhes do hardware.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315" 
+          src="https://www.youtube.com/embed/3ka-FIiZK2U"
+          title="Using the DISM Command Prompt Tool to Repair Windows"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <!-- desk.cpl -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 desk.cpl – Resolução de Tela</h3>
+        <p>Permite ajustar resolução e taxa de atualização do monitor.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>desk.cpl</code> e pressione Enter.</li>
+          <li>Escolha a resolução e taxa de atualização adequada.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315" 
+          src="https://www.youtube.com/embed/3ka-FIiZK2U"
+          title="Adjusting Screen Resolution via CMD"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <!-- dpiscaling -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 dpiscaling – Escala de Tela</h3>
+        <p>Altera tamanho de textos, ícones e janelas (100%, 125%, 150%).</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>dpiscaling</code> e pressione Enter.</li>
+          <li>Escolha a escala desejada para melhor leitura e visualização.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315" 
+          src="https://www.youtube.com/embed/3ka-FIiZK2U"
+          title="Adjusting DPI Scaling via CMD"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+
+    <!-- ms-settings:display -->
+    <article class="linha-flex">
+      <div class="texto">
+        <h3>🔹 ms-settings:display – Configurações de Exibição</h3>
+        <p>Permite alterar brilho, cor, HDR e ativar modo noturno.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD.</li>
+          <li>Digite <code>ms-settings:display</code> e pressione Enter.</li>
+          <li>Ajuste brilho, cor, HDR ou modo noturno conforme desejar.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315" 
+          src="https://www.youtube.com/embed/3ka-FIiZK2U"
+          title="Display Settings via CMD"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </article>
+    
+  </section>
+
+ 
+  <section class="bloco-cmd">
+    <h2>⚡ CMD: Comandos para Otimização do Windows</h2>
+    <p>
+      O CMD é uma forma rápida de melhorar o desempenho do computador.  
+      Com ele você pode acelerar o Windows, corrigir erros e manter o sistema mais estável, sem precisar instalar programas extras.
+    </p>
+
+    <!-- msconfig -->
+    <div class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 10 – msconfig (Configuração de Inicialização)</h3>
+        <p>Mostra os programas que abrem junto com o Windows. Você pode desativar os que não usa para o computador iniciar mais rápido.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD (<b>Windows + R</b>, digite <code>msconfig</code> e pressione Enter).</li>
+          <li>Vá até a aba <b>Inicialização</b> para ver os programas que iniciam com o Windows.</li>
+          <li>Desmarque os programas que você não precisa iniciar junto com o Windows.</li>
+          <li>Clique em <b>OK</b> e reinicie o computador se necessário.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/TdZ_0KwtLjE"
+          title="Cleaning up PC with CMD commands"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- msconfig Windows 11 -->
+    <div class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 11 – msconfig (Configuração de Inicialização)</h3>
+        <p>No Windows 11, o gerenciamento de inicialização agora é feito pelo Task Manager. O msconfig abre, mas redireciona para lá.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD (<b>Windows + R</b>, digite <code>msconfig</code> e pressione Enter).</li>
+          <li>Na aba <b>Inicialização</b>, clique no link que leva ao Task Manager.</li>
+          <li>No Task Manager, desative os programas que não quer que iniciem com o Windows.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/TdZ_0KwtLjE"
+          title="Cleaning up PC with CMD commands"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- taskmgr -->
+    <div class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 10 – taskmgr (Gerenciador de Tarefas)</h3>
+        <p>Mostra todos os programas e processos que estão rodando, além do consumo de CPU, memória e disco. Permite gerenciar programas que iniciam com o Windows.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD (<b>Windows + R</b>, digite <code>taskmgr</code> e pressione Enter).</li>
+          <li>Na aba <b>Processos</b>, veja programas e uso de recursos.</li>
+          <li>Na aba <b>Inicializar</b>, desative programas que não quer que iniciem automaticamente.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/7JlWYfujvS0"
+          title="How To Run Disk Cleanup From Command Prompt"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 11 – taskmgr (Gerenciador de Tarefas)</h3>
+        <p>Mais moderno, permite encerrar programas, monitorar uso de CPU, memória e energia, e gerenciar inicialização.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD (<b>Windows + R</b>, digite <code>taskmgr</code> e pressione Enter).</li>
+          <li>Na aba <b>Processos</b>, veja os programas ativos.</li>
+          <li>Na aba <b>Inicializar</b>, desative o que não precisa iniciar com o Windows.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/7JlWYfujvS0"
+          title="How To Run Disk Cleanup From Command Prompt"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- powercfg /energy -->
+    <div class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 10 – powercfg /energy (Relatório de Energia)</h3>
+        <p>Analisa o sistema por 60 segundos e gera um relatório mostrando programas que gastam mais energia.</p>
+        <h4>Como usar:</h4>
+        <ol>
+          <li>Abra o CMD como administrador.</li>
+          <li>Digite <code>powercfg /energy</code> e pressione Enter.</li>
+          <li>Aguarde 60 segundos e abra o arquivo <code>energy-report.html</code> gerado em <code>C:\Windows\System32</code>.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/3ka-FIiZK2U"
+          title="Using the DISM Command Prompt Tool to Repair Windows"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="linha-flex">
+      <div class="texto">
+        <h3>🔹 Windows 11 – powercfg /energy (Relatório de Energia)</h3>
+        <p>Funciona igual ao Windows 10, mostrando consumo de energia e problemas relacionados ao modo de espera moderno.</p>
+        <h4>Como usar:</b>
+        <ol>
+          <li>Abra o CMD como administrador.</li>
+          <li>Digite <code>powercfg /energy</code> e pressione Enter.</li>
+          <li>Abra o arquivo <code>energy-report.html</code> gerado em <code>C:\Windows\System32</code> para conferir detalhes.</li>
+        </ol>
+      </div>
+      <div class="video">
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/3ka-FIiZK2U"
+          title="Using the DISM Command Prompt Tool to Repair Windows"
+          frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Scripts -->
+  <script src="../script.js"></script>
+  <script src="powershell.js"></script>
+</main>
+</body>
+</html>

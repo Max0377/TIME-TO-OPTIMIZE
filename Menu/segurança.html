@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Segurança - TIME TO OPTIMIZE</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="seguranca.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../imagens/logo.png" alt="Logo Opticore">
+      <span id="titleText">TIME TO OPTIMIZE</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../suporte/suporte.html">Suporte</a></li>
+        <li>
+          <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos do Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Backup -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+<!-- Canvas -->
+<canvas id="lightCanvas"></canvas>
+
+<main>
+  <h1>Segurança no Windows</h1>
+
+  <section>
+      <section>
+    <h2>1. Antivírus e Firewall</h2>
+    <p><strong>O que é?</strong></p>
+    <ul>
+      <li>Antivírus é um programa que verifica se há vírus ou arquivos perigosos no seu computador e os bloqueia.</li>
+      <li>Firewall é como uma muralha que protege seu computador de acessos estranhos pela internet.</li>
+    </ul>
+    <p><strong>O que fazer?</strong></p>
+    <ul>
+      <li>Use o antivírus que já vem com o Windows, chamado <strong>Windows Defender</strong>. Ele protege automaticamente seu computador.</li>
+      <li>Verifique se ele está sempre ligado e atualizado para identificar as ameaças mais recentes.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Atualizações</h2>
+    <p><strong>O que são?</strong></p>
+    <p>Atualizações são melhorias enviadas pela Microsoft para corrigir problemas e deixar o sistema mais seguro.</p>
+    <p><strong>O que fazer?</strong></p>
+    <ul>
+      <li>Sempre que aparecer uma mensagem para atualizar o Windows, aceite e instale.</li>
+      <li>Atualize também os programas que você usa e os drivers (programas que fazem o hardware funcionar direito).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Navegação Segura</h2>
+    <p><strong>O que é?</strong></p>
+    <p>Navegar com cuidado evita que você acesse sites perigosos que podem roubar seus dados.</p>
+    <p><strong>O que fazer?</strong></p>
+    <ul>
+      <li>Não clique em links estranhos que chegam por email ou mensagens.</li>
+      <li>Antes de colocar qualquer informação pessoal, verifique se o site tem “https://” e um cadeado na barra do navegador — isso significa que o site é seguro.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Backup Regular</h2>
+    <p><strong>O que é?</strong></p>
+    <p>Backup é uma cópia dos seus arquivos importantes. Assim, se o computador der problema, você não perde tudo.</p>
+    <p><strong>O que fazer?</strong></p>
+    <ul>
+      <li>Salve seus documentos, fotos e vídeos importantes num <strong>HD externo</strong> (um dispositivo que você conecta ao computador) ou na <strong>nuvem</strong> (Google Drive, OneDrive).</li>
+      <li>Faça backup sempre que puder para manter seus arquivos seguros.</li>
+    </ul>
+  </section>
+</main>
+
+
+<!-- JS -->
+<script src="seguranca.js"></script>
+</body>
+</html>

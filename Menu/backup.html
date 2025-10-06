@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Backup e Salvamento em Nuvem - TIME TO OPTIMIZE</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+  
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="backup.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../imagens/logo.png" alt="Logo Opticore">
+      <span id="titleText">TIME TO OPTIMIZE</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../suporte/suporte.html">Suporte</a></li>
+        <li>
+          <div class="hamburger" id="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos do Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Backup -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+<!-- ===== Canvas fundo ===== -->
+<canvas id="lightCanvas"></canvas>
+
+<!-- ===== Conteúdo principal ===== -->
+<main>
+  <h1 id="mainTitle">☁️ Backup e Salvamento em Nuvem</h1>
+  <p class="subtext">Mantenha seus arquivos protegidos e acessíveis em qualquer lugar.</p>
+  
+  <!-- Explicação detalhada para leigos -->
+  <section class="info-section">
+    <h2>Por que fazer Backup?</h2>
+    <p>Fazer backup significa criar uma cópia dos seus arquivos para garantir que você não perca nada em caso de problemas, como vírus, falhas do computador ou exclusão acidental. Com backup, você consegue restaurar suas fotos, documentos e vídeos rapidamente.</p>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>💻 Backup Local</h3>
+      <p>Salve cópias de seus arquivos em um dispositivo físico, como HD externo ou pen drive. É simples: basta copiar seus arquivos ou usar softwares de backup que ajudam a automatizar esse processo. Isso garante segurança mesmo sem internet.</p>
+    </div>
+    <div class="card">
+      <h3>☁️ Backup em Nuvem</h3>
+      <p>Armazene seus arquivos na internet usando serviços confiáveis, como Google Drive, OneDrive ou Dropbox. Eles salvam seus dados em servidores seguros e permitem acessar suas informações de qualquer lugar. É ideal para liberar espaço no computador ou smartphone.</p>
+    </div>
+    <div class="card">
+      <h3>🔄 Backup Automático</h3>
+      <p>O Windows permite criar backups automáticos e pontos de restauração. Basta configurar para que o sistema salve seus arquivos periodicamente, sem que você precise lembrar. Assim, suas informações ficam sempre protegidas sem esforço.</p>
+    </div>
+  </section>
+</main>
+
+<!-- Script externo -->
+<script src="backup.js"></script>
+</body>
+</html>

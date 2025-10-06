@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações Nativas - TIME TO OPTIMIZE</title>
+
+  <!-- Fontes e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="config.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="../imagens/logo.png" alt="Logo Opticore">
+        <span id="titleText">TIME TO OPTIMIZE</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+          <li><a href="../suporte/suporte.html">Suporte</a></li>
+          <li>
+            <div class="hamburger" id="hamburger">
+              <span></span><span></span><span></span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos do Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Backup -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+  <!-- ===== Canvas Fundo ===== -->
+  <canvas id="lightCanvas"></canvas>
+
+  <!-- ===== Conteúdo Principal ===== -->
+  <main>
+    <h1>⚙️ Configurações Nativas do Windows</h1>
+    <p class="subtext">Ajuste exibição, rede, sistema, energia, armazenamento e atualizações do Windows para manter seu computador rápido, seguro e confortável.</p>
+
+<!-- ===== Seção Exibição ===== -->
+<section class="section">
+  <h2>🔹 Configurações de Exibição</h2>
+  <div class="row">
+
+    <!-- Windows 10 -->
+    <div class="column">
+           <h3>Windows 10 – Exibição</h3>
+
+      <div class="config-item">
+        <h4>Resolução da Tela</h4>
+        <p><b>Como fazer:</b> Abra Configurações → Sistema → Tela → Resolução da Tela → escolha "Recomendada".</p>
+        <p><b>Por que usar:</b> Ajusta nitidez da imagem. Resolução menor ajuda computadores antigos a rodarem mais rápido.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Escala e Layout</h4>
+        <p><b>Como fazer:</b> Configurações → Tela → Escala e Layout → escolha 100%, 125% ou 150%.</p>
+        <p><b>Por que usar:</b> Textos e ícones maiores facilitam leitura. Escala menor mostra mais conteúdo na tela.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Múltiplos Monitores</h4>
+        <p><b>Como fazer:</b> Conecte outro monitor → Configurações → Tela → Vários Monitores → escolha Duplicar ou Estender.</p>
+        <p><b>Por que usar:</b> Duplicar = mesma imagem nos dois monitores. Estender = mais espaço de trabalho.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Brilho e Cor</h4>
+        <p><b>Como fazer:</b> Configurações → Tela → ajuste o slider de brilho.</p>
+        <p><b>Por que usar:</b> Brilho alto = imagens mais claras, mas consome mais bateria. Brilho baixo = menor consumo e mais conforto visual.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Luz Noturna</h4>
+        <p><b>Como fazer:</b> Configurações → Tela → Luz Noturna → ativar.</p>
+        <p><b>Por que usar:</b> Reduz luz azul à noite, protege os olhos e ajuda a dormir melhor.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Taxa de Atualização</h4>
+        <p><b>Como fazer:</b> Configurações → Tela → Configurações avançadas → Taxa de atualização → escolha maior Hz suportada.</p>
+        <p><b>Por que usar:</b> Mais Hz = imagem mais fluida, ideal para jogos e vídeos.</p>
+      </div>
+    </div>
+
+    <!-- Windows 11 -->
+    <div class="column">
+           <h3>Windows 11 – Exibição</h3>
+
+      <div class="config-item">
+        <h4>Resolução da Tela</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Tela → Resolução recomendada.</p>
+        <p><b>Por que usar:</b> Ajusta nitidez da imagem, como no Windows 10, garantindo melhor performance.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Escala e Layout</h4>
+        <p><b>Como fazer:</b> Configurações → Tela → Escala e Layout → escolha a escala desejada.</p>
+        <p><b>Por que usar:</b> Ajusta tamanho de textos e ícones, ou mostra mais conteúdo na tela.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Múltiplos Monitores</h4>
+        <p><b>Como fazer:</b> Conecte outro monitor → Configurações → Tela → Duplicar ou Estender.</p>
+        <p><b>Por que usar:</b> Duplicar = apresentações; Estender = mais espaço de trabalho.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Brilho e Cor</h4>
+        <p><b>Como fazer:</b> Configurações → Tela → ajuste brilho manual ou automático.</p>
+        <p><b>Por que usar:</b> Conforto visual e economia de bateria.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Luz Noturna</h4>
+        <p><b>Como fazer:</b> Configurações → Tela → Luz Noturna → ativar e programar horário.</p>
+        <p><b>Por que usar:</b> Reduz luz azul, protege os olhos e melhora o sono.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Taxa de Atualização</h4>
+        <p><b>Como fazer:</b> Configurações → Tela → Configurações avançadas → Taxa de atualização → escolha maior Hz suportada.</p>
+        <p><b>Por que usar:</b> Imagem mais fluida, importante para jogos e vídeos.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Seção Rede e Internet ===== -->
+<section class="section">
+  <h2>🔹 Rede e Internet</h2>
+  <div class="row">
+
+    <!-- Windows 10 -->
+    <div class="column">
+           <h3>Windows 10 – Rede</h3>
+
+      <div class="config-item">
+        <h4>Wi-Fi e Redes</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Wi-Fi → selecionar rede e conectar/desconectar.</p>
+        <p><b>Por que usar:</b> Conecta seu computador à internet sem fio de forma segura e controlada.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Ethernet</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Ethernet → conectar cabo de rede.</p>
+        <p><b>Por que usar:</b> Conexão cabeada garante estabilidade e velocidade maior que Wi-Fi.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Proxy e VPN</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Proxy ou VPN → configurar conforme necessário.</p>
+        <p><b>Por que usar:</b> Acesso a redes privadas, proteção de dados ou contornar restrições geográficas.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Status da Conexão</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Status → Executar diagnóstico se houver problemas.</p>
+        <p><b>Por que usar:</b> Detecta problemas de rede e sugere correções automaticamente.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Uso de Dados</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Uso de Dados → definir limites e alertas.</p>
+        <p><b>Por que usar:</b> Evita exceder pacotes de internet limitados e controla consumo por app.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Modo Avião</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Modo Avião → ativar/desativar.</p>
+        <p><b>Por que usar:</b> Desativa todas conexões sem fio rapidamente, útil em viagens ou economizar bateria.</p>
+      </div>
+    </div>
+
+    <!-- Windows 11 -->
+    <div class="column">
+           <h3>Windows 11 – Rede</h3>
+
+      <div class="config-item">
+        <h4>Wi-Fi e Redes</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Wi-Fi → conectar/desconectar redes disponíveis.</p>
+        <p><b>Por que usar:</b> Mesma função do Windows 10, mas com layout moderno e centralizado.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Ethernet</h4>
+        <p><b>Como fazer:</b> Conecte o cabo → Configurações → Rede e Internet → Ethernet → verificar status.</p>
+        <p><b>Por que usar:</b> Conexão cabeada mais estável e rápida.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Proxy e VPN</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Proxy/VPN → configurar apps modernos ou manualmente.</p>
+        <p><b>Por que usar:</b> Protege dados e permite acessar redes privadas.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Status da Conexão</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Status → diagnósticos automáticos e gráficos detalhados.</p>
+        <p><b>Por que usar:</b> Detecta falhas e mostra informações visuais sobre uso da rede.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Uso de Dados</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Uso de Dados → limites e monitoramento por app.</p>
+        <p><b>Por que usar:</b> Evita excesso de consumo e ajuda a controlar rede doméstica.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Modo Avião</h4>
+        <p><b>Como fazer:</b> Configurações → Rede e Internet → Modo Avião → ativar/desativar.</p>
+        <p><b>Por que usar:</b> Desliga rapidamente todas conexões sem fio.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Seção Sistema e Energia ===== -->
+<section class="section">
+  <h2>🔹 Sistema e Energia</h2>
+  <div class="row">
+
+    <!-- Windows 10 -->
+    <div class="column">
+         <h3>Windows 10 – Sistema e Energia</h3>
+
+      <div class="config-item">
+        <h4>Plano de Energia</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Energia e Suspensão → Configurações adicionais de energia → Escolher plano (Desempenho ou Economia).</p>
+        <p><b>Por que usar:</b> Ajusta consumo de energia conforme necessidade: desempenho máximo ou economia de bateria.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Suspensão e Tela</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Energia e Suspensão → Definir tempo para desligamento da tela ou suspensão automática.</p>
+        <p><b>Por que usar:</b> Economiza energia, prolonga vida útil da tela e evita gasto desnecessário de bateria.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Uso de Bateria</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Bateria → Visualizar consumo por app e definir alertas.</p>
+        <p><b>Por que usar:</b> Identifica aplicativos que drenam mais bateria, permitindo ajustes para economia.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Desempenho</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Sobre → Configurações avançadas → Ajustes visuais ou performance.</p>
+        <p><b>Por que usar:</b> Melhora velocidade do PC ou melhora aparência visual, dependendo da prioridade.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Programas em Segundo Plano</h4>
+        <p><b>Como fazer:</b> Configurações → Privacidade → Aplicativos em segundo plano → Desativar apps desnecessários.</p>
+        <p><b>Por que usar:</b> Reduz consumo de CPU e memória, deixando o sistema mais rápido.</p>
+      </div>
+    </div>
+
+    <!-- Windows 11 -->
+    <div class="column">
+          <h3>Windows 11 – Sistema e Energia</h3>
+
+      <div class="config-item">
+        <h4>Plano de Energia</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Energia e Bateria → Escolher plano de energia (Equilibrado, Desempenho ou Economia).</p>
+        <p><b>Por que usar:</b> Mesma função do Windows 10, mas com painel visual moderno e sugestões automáticas.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Suspensão e Tela</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Energia e Bateria → Configurar desligamento e suspensão automática.</p>
+        <p><b>Por que usar:</b> Economiza energia e aumenta conforto do usuário.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Uso de Bateria</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Energia e Bateria → Visualizar gráficos detalhados por app.</p>
+        <p><b>Por que usar:</b> Monitoramento detalhado ajuda a identificar apps que consomem mais bateria.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Desempenho</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Sobre → Ajustes visuais → Prioridade para performance ou aparência.</p>
+        <p><b>Por que usar:</b> Ajusta o sistema conforme necessidade, mantendo performance ou design moderno.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Programas em Segundo Plano</h4>
+        <p><b>Como fazer:</b> Configurações → Privacidade → Aplicativos em segundo plano → Desativar apps que não precisam rodar sempre.</p>
+        <p><b>Por que usar:</b> Melhora desempenho geral e reduz consumo de bateria em notebooks.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Seção Armazenamento e Limpeza ===== -->
+<section class="section">
+  <h2>🔹 Armazenamento e Limpeza</h2>
+  <div class="row">
+
+    <!-- Windows 10 -->
+    <div class="column">
+           <h3>Windows 10 – Armazenamento</h3>
+
+      <div class="config-item">
+        <h4>Storage Sense</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Armazenamento → Ativar Storage Sense para limpeza automática de arquivos temporários.</p>
+        <p><b>Por que usar:</b> Mantém seu PC limpo, evitando acúmulo de arquivos desnecessários.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Arquivos Temporários</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Armazenamento → Arquivos Temporários → Selecionar itens → Remover arquivos.</p>
+        <p><b>Por que usar:</b> Libera espaço no disco, melhora desempenho e reduz lentidão.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Lixeira</h4>
+        <p><b>Como fazer:</b> Clique com o botão direito na Lixeira → Esvaziar Lixeira → Confirmar exclusão.</p>
+        <p><b>Por que usar:</b> Remove arquivos permanentemente, liberando espaço em disco.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Unidades de Disco</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Armazenamento → Visualizar uso de cada unidade → Limpar itens desnecessários.</p>
+        <p><b>Por que usar:</b> Permite monitorar espaço e identificar pastas grandes ou inúteis.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>OneDrive e Nuvem</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Armazenamento → OneDrive → Salvar arquivos online ou liberar espaço local.</p>
+        <p><b>Por que usar:</b> Evita ocupar espaço do disco rígido e mantém arquivos seguros na nuvem.</p>
+      </div>
+    </div>
+
+    <!-- Windows 11 -->
+    <div class="column">
+           <h3>Windows 11 – Armazenamento</h3>
+
+      <div class="config-item">
+        <h4>Storage Sense</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Armazenamento → Ativar Storage Sense → Configurar frequência de limpeza.</p>
+        <p><b>Por que usar:</b> Limpeza automática detalhada, removendo caches e arquivos antigos sem intervenção manual.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Arquivos Temporários</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Armazenamento → Arquivos Temporários → Selecionar o que excluir → Limpar.</p>
+        <p><b>Por que usar:</b> Libera espaço e mantém o sistema mais ágil.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Lixeira</h4>
+        <p><b>Como fazer:</b> Clique com botão direito na Lixeira → Esvaziar Lixeira → Confirmar.</p>
+        <p><b>Por que usar:</b> Libera espaço rapidamente e mantém organização.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Unidades de Disco</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Armazenamento → Mostrar uso detalhado → Limpar arquivos grandes ou desnecessários.</p>
+        <p><b>Por que usar:</b> Melhor visão do uso do disco, ajuda a otimizar armazenamento.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>OneDrive e Nuvem</h4>
+        <p><b>Como fazer:</b> Configurações → Sistema → Armazenamento → OneDrive → Mover arquivos para nuvem ou liberar espaço local.</p>
+        <p><b>Por que usar:</b> Mantém dados seguros e economiza espaço no computador.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== Seção Atualizações do Windows ===== -->
+<section class="section">
+  <h2>🔹 Atualizações do Windows</h2>
+  <div class="row">
+
+    <!-- Windows 10 -->
+    <div class="column">
+      
+      <h3>Windows 10 – Atualizações</h3>
+
+      <div class="config-item">
+        <h4>Verificar Atualizações</h4>
+        <p><b>Como fazer:</b> Abra Configurações → Atualização e Segurança → Windows Update → Clique em "Verificar se há atualizações".</p>
+        <p><b>Por que usar:</b> Garante que seu sistema receba as últimas melhorias de segurança, correções de bugs e novos recursos.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Atualizações Automáticas</h4>
+        <p><b>Como fazer:</b> Configurações → Atualização e Segurança → Windows Update → Configurações avançadas → Ativar "Baixar atualizações automaticamente".</p>
+        <p><b>Por que usar:</b> Mantém o sistema sempre protegido e atualizado sem necessidade de intervenção manual.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Histórico de Atualizações</h4>
+        <p><b>Como fazer:</b> Configurações → Atualização e Segurança → Windows Update → Histórico de atualizações.</p>
+        <p><b>Por que usar:</b> Permite verificar quais atualizações foram instaladas, identificar problemas recentes ou reverter atualizações problemáticas.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Pausar Atualizações</h4>
+        <p><b>Como fazer:</b> Configurações → Atualização e Segurança → Windows Update → Pausar atualizações por até 35 dias.</p>
+        <p><b>Por que usar:</b> Evita reinícios automáticos durante trabalhos importantes, viagens ou apresentações.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Horário de Atividade</h4>
+        <p><b>Como fazer:</b> Configurações → Atualização e Segurança → Windows Update → Alterar horário de atividade → Defina início e término.</p>
+        <p><b>Por que usar:</b> Evita que o Windows reinicie automaticamente durante o horário em que você está usando o computador.</p>
+      </div>
+    </div>
+
+    <!-- Windows 11 -->
+    <div class="column">
+           <h3>Windows 11 – Atualizações</h3>
+
+      <div class="config-item">
+        <h4>Verificar Atualizações</h4>
+        <p><b>Como fazer:</b> Configurações → Windows Update → Clique em "Verificar atualizações".</p>
+        <p><b>Por que usar:</b> Mantém seu PC protegido com os patches de segurança mais recentes e garante compatibilidade com novos programas.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Atualizações Automáticas</h4>
+        <p><b>Como fazer:</b> Configurações → Windows Update → Configurações avançadas → Ativar atualizações automáticas e atualizações de drivers.</p>
+        <p><b>Por que usar:</b> Evita vulnerabilidades e mantém drivers e aplicativos do sistema sempre atualizados.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Histórico de Atualizações</h4>
+        <p><b>Como fazer:</b> Configurações → Windows Update → Histórico de atualizações → Ver detalhes das atualizações instaladas.</p>
+        <p><b>Por que usar:</b> Ajuda a identificar problemas recentes, conferir correções e decidir se é necessário desinstalar alguma atualização.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Pausar Atualizações</h4>
+        <p><b>Como fazer:</b> Configurações → Windows Update → Pausar atualizações → Escolher período de pausa (7, 14 ou 35 dias).</p>
+        <p><b>Por que usar:</b> Útil para evitar reinícios inesperados ou durante trabalhos críticos.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Horário de Atividade</h4>
+        <p><b>Como fazer:</b> Configurações → Windows Update → Horário de atividade → Ajustar para quando você normalmente usa o PC.</p>
+        <p><b>Por que usar:</b> Evita que atualizações e reinícios atrapalhem suas tarefas diárias.</p>
+      </div>
+
+      <div class="config-item">
+        <h4>Opções de Reinício</h4>
+        <p><b>Como fazer:</b> Configurações → Windows Update → Opções de reinício → Agendar reinício após atualizações.</p>
+        <p><b>Por que usar:</b> Permite escolher um momento conveniente para reiniciar o computador após atualizações, garantindo continuidade do trabalho.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+      </main>
+
+  <!-- ===== Script ===== -->
+  <script src="config.js"></script>
+</body>
+</html>

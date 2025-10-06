@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicas para Usuários de Desktop - TIME TO OPTIMIZE</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
+  <!-- Estilo -->
+  <link rel="stylesheet" href="desktop.css">
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../imagens/logo.png" alt="Logo Opticore">
+      <span id="titleText">TIME TO OPTIMIZE</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../sobre/sobre.html">Sobre Nós</a></li>
+        <li><a href="../suporte/suporte.html">Suporte</a></li>
+        <li>
+          <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Menu flutuante -->
+<div class="float-menu" id="floatMenu" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Menu</h3>
+    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  </div>
+  <ul>
+    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+    <li id="openComandos" role="button" tabindex="0">Comandos do Windows</li>
+    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+    <li><a href="../Menu/segurança.html">Segurança</a></li>
+    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+  </ul>
+</div>
+
+<!-- Modal Acessibilidade -->
+<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Acessibilidade</h3>
+    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
+  </div>
+  <ul>
+    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
+    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+  </ul>
+</div>
+
+<!-- Modal Comandos Windows -->
+<div class="float-menu" id="floatComandos" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Comandos do Windows</h3>
+    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
+  </div>
+  <p class="comandos-intro">
+    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
+    Clique em uma das opções abaixo para ver exemplos de comandos.
+  </p>
+  <ul>
+    <li id="openCMD" role="button" tabindex="0">
+      CMD (Prompt de Comando)
+      <div class="mini-desc">
+        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
+      </div>
+    </li>
+    <li id="openPowerShell" role="button" tabindex="0">
+      PowerShell
+      <div class="mini-desc">
+        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
+      </div>
+    </li>
+    <li id="openWinR" role="button" tabindex="0">
+      Windows + R
+      <div class="mini-desc">
+        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+      <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal Backup -->
+<div class="float-menu" id="floatBackup" aria-hidden="true">
+  <div class="float-menu-header">
+    <h3>Backup e Salvamento em Nuvem</h3>
+    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+  </div>
+  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
+</div>
+
+<!-- Canvas -->
+<canvas id="lightCanvas"></canvas>
+
+<main>
+  <h1 id="mainTitle">🖥️ Dicas para Usuários de Desktop</h1>
+  <p class="subtext">Melhore o desempenho, segurança e vida útil do seu PC de mesa com práticas simples.</p>
+
+<section class="tips">
+  <h2>⚡ Energia no Desktop</h2>
+  <p><strong>Não deixe o computador ligado o tempo todo sem necessidade.</strong> Isso gasta energia e desgasta o PC mais rápido. Use o modo “suspender” ou desligue quando não for usar por muito tempo.</p>
+  <p><strong>Use um filtro de linha ou estabilizador para ligar o PC.</strong> Isso protege contra picos de energia que podem danificar o computador.</p>
+  <p><strong>A fonte de alimentação é muito importante.</strong> Ela transforma a energia da tomada para o PC. Uma fonte ruim desperdiça energia e pode causar falhas. Prefira fontes com selo de eficiência (80 PLUS).</p>
+  <p><strong>Evite ligar muitos dispositivos na mesma tomada ou filtro.</strong> Isso pode sobrecarregar a energia e causar problemas.</p>
+  <p><strong>Configure o Windows para economizar energia.</strong> Nos “Planos de energia”, escolha opções que reduzem o consumo quando o PC está parado.</p>
+</section>
+
+<section class="tips">
+  <h2>🌡️ Controle de Temperatura</h2>
+  <p><strong>Poeira dentro do gabinete faz o computador esquentar.</strong> Ela bloqueia a passagem do ar e faz o PC trabalhar mais quente. Limpe o interior regularmente com pincel macio e ar comprimido.</p>
+  <p><strong>Gabinete precisa de espaço para o ar circular.</strong> Evite deixar o PC encostado em paredes ou dentro de móveis fechados para que o ar quente possa sair.</p>
+  <p><strong>Ventoinhas ajudam a empurrar o ar quente para fora.</strong> Se possível, coloque ventoinhas extras para melhorar a circulação de ar.</p>
+  <p><strong>A pasta térmica fica entre o processador e o cooler.</strong> Ela ajuda a transferir o calor. Troque a pasta a cada 1 ou 2 anos para evitar superaquecimento.</p>
+  <p><strong>Se o PC esquentar demais, pode travar ou desligar sozinho.</strong> Isso indica que a refrigeração precisa ser revisada.</p>
+  <p><strong>Use programas para monitorar a temperatura do PC.</strong> Assim, você pode agir antes que o calor danifique o equipamento.</p>
+</section>
+
+<section class="tips">
+  <h2>🚀 Desempenho do Desktop</h2>
+  <p><strong>Use um SSD:</strong> Trocar o HD por um SSD deixa o computador muito mais rápido na hora de ligar e abrir programas.</p>
+  <p><strong>Tenha memória RAM suficiente:</strong> Para tarefas básicas, 8 GB já ajudam bastante. Para uso mais pesado, como jogos ou edição, 16 GB é melhor.</p>
+  <p><strong>Evite programas desnecessários na inicialização:</strong> Muitos programas abrem sozinhos quando o Windows liga, deixando o PC lento. Desative o que não usa.</p>
+  <p><strong>Mantenha o sistema atualizado:</strong> Atualizações do Windows e dos drivers corrigem erros e melhoram o desempenho.</p>
+  <p><strong>Organize seus arquivos:</strong> Pastas bem organizadas ajudam o PC a trabalhar melhor e você a encontrar o que precisa mais rápido.</p>
+</section>
+
+<section class="tips">
+  <h2>🛠️ Manutenção do Desktop</h2>
+  <p><strong>Limpe a poeira regularmente:</strong> A poeira dentro do gabinete atrapalha o resfriamento e pode causar superaquecimento.</p>
+  <p><strong>Verifique os cabos:</strong> Confira se os cabos estão bem conectados e sem danos para evitar problemas de hardware.</p>
+  <p><strong>Faça backup dos seus arquivos:</strong> Salve seus documentos importantes em outro lugar, como um HD externo ou na nuvem.</p>
+  <p><strong>Use um antivírus confiável:</strong> Proteja seu computador contra vírus e malwares, mas evite ter vários antivírus instalados para não deixar o PC lento.</p>
+  <p><strong>Monitore o estado do HD ou SSD:</strong> Use programas gratuitos para verificar se o seu disco está saudável e evitar perdas de dados.</p>
+</section>
+
+
+<script src="desktop.js"></script>
+</body>
+</html>
