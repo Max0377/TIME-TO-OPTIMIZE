@@ -82,9 +82,26 @@ if (toggleMode) {
 
 /* ===== Controle de Fonte ===== */
 let fontSize = 16;
+const increaseFont = document.getElementById("increaseFont");
+const decreaseFont = document.getElementById("decreaseFont");
+const resetFont = document.getElementById("resetFont");
+
 function applyFontSize() {
   document.documentElement.style.fontSize = fontSize + "px";
   localStorage.setItem("fontSize", fontSize);
+}
+if (localStorage.getItem("fontSize")) {
+  const saved = parseInt(localStorage.getItem("fontSize"), 10);
+  if (!isNaN(saved)) { fontSize = saved; applyFontSize(); }
+}
+if (increaseFont) {
+  increaseFont.addEventListener("click", () => { if (fontSize < 26) { fontSize += 2; applyFontSize(); } });
+}
+if (decreaseFont) {
+  decreaseFont.addEventListener("click", () => { if (fontSize > 10) { fontSize -= 2; applyFontSize(); } });
+}
+if (resetFont) {
+  resetFont.addEventListener("click", () => { fontSize = 16; applyFontSize(); });
 }
 
 // Recuperar valor salvo
@@ -202,4 +219,5 @@ if (openBackup) {
 
 /* ===== Inicialização ===== */
 setFont(currentFontSize);s
+
 
