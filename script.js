@@ -216,7 +216,7 @@ if (openComandos && floatComandos && closeComandos) {
 }
 
 /* Links para páginas separadas */
-if (btnCMD) btnCMD.addEventListener("click", () => { window.location.href = "windows/cmd.html"; });
+if (btnCMD) btnCMD.addEventListener("click", () => { window.location.href = "/windows/cmd.html"; });
 if (btnPowerShell) btnPowerShell.addEventListener("click", () => { window.location.href = "Comandos-do-Windows/powershell.html"; });
 if (btnWinR) btnWinR.addEventListener("click", () => { window.location.href = "Comandos-do-Windows/winr.html"; });
 
