@@ -190,17 +190,17 @@ if (openComandos && floatComandos && closeComandos) {
 
 if (btnCMD) {
   btnCMD.addEventListener("click", () => {
-    window.location.href = "../Comandos%20do%20Windows/cmd.html";
+    window.location.href = "/TIME-TO-OPTIMIZE/windows/cmd.html";
   });
 }
 if (btnPowerShell) {
   btnPowerShell.addEventListener("click", () => {
-    window.location.href = "../Comandos%20do%20Windows/powershell.html";
+    window.location.href = "/TIME-TO-OPTIMIZE/windows/powershell.html";
   });
 }
 if (btnWinR) {
   btnWinR.addEventListener("click", () => {
-    window.location.href = "../Comandos%20do%20Windows/winr.html";
+    window.location.href = "/TIME-TO-OPTIMIZE/windows/winr.html";
   });
 }
 

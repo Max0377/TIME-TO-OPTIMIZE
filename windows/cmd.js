@@ -181,11 +181,11 @@ const btnWinR = document.getElementById("openWinR");
 // Função para construir caminho correto
 function goTo(page) {
   // Se já estou dentro da pasta "Comandos do Windows"
-  if (window.location.pathname.includes("Comandos do Windows")) {
+  if (window.location.pathname.includes("windows")) {
     window.location.href = page + ".html";
   } else {
     // Se estou fora (index, sobre, suporte...)
-    window.location.href = "Comandos%20do%20Windows/" + page + ".html";
+    window.location.href = "TIME-TO-OPTIMIZE/" + page + ".html";
   }
 }
 
