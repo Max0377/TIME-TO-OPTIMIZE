@@ -113,6 +113,7 @@ body.dark-mode .float-menu ul li { color:#00E5FF; }
   color:#003263;
 }
 
+
 /* pequenas melhorias visuais para o menu em telas menores */
 @media (max-width:560px){
   .float-menu { width: 92%; right: -100%; }
