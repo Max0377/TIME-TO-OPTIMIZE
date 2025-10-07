@@ -176,7 +176,7 @@ if (openComandos && floatComandos && closeComandos) {
 /* Links para páginas separadas */
 if (btnCMD) btnCMD.addEventListener("click", () => { window.location.href = "/TIME-TO-OPTIMIZE/windows/cmd.html"; });
 if (btnPowerShell) btnPowerShell.addEventListener("click", () => { window.location.href = "/TIME-TO-OPTIMIZE/windows/powershell.html"; });
-if (btnWinR) btnWinR.addEventListener("click", () => { window.location.href = "/TIME-TO-OPTIMIZE/windows/powershell.html"; });
+if (btnWinR) btnWinR.addEventListener("click", () => { window.location.href = "/TIME-TO-OPTIMIZE/windows/winr.html"; });
 
 
 /* ===== Menu Links (Todas as páginas do Menu) ===== */
