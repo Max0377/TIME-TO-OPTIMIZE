@@ -120,6 +120,15 @@ body.dark-mode .float-menu ul li { color:#00E5FF; }
   .float-menu.show { right: 4%; }
 }
 
+/* Texto principal justificado */
+.texto-principal {
+  text-align: justify;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 /* Canvas */
 #lightCanvas { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
 
@@ -188,12 +197,4 @@ body.dark-mode .btn { background:#00E5FF; color:#121212; }
 body.dark-mode .btn:hover { background:#0099cc; color:#fff; }
 body.dark-mode form input, body.dark-mode form textarea { background:#1e1e1e; color:#ccc; border:1px solid #00E5FF; }
 
-/* Texto principal justificado */
-.texto-principal {
-  text-align: justify;
-  line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
