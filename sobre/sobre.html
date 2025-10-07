@@ -1,117 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobre Nós - TIME TO OPTIMIZE</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sobre Nós - Time to Optimize</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/sobre.css">
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins&display=swap" rel="stylesheet">
 
+  <!-- CSS (ajuste o caminho se necessário) -->
+  <link rel="stylesheet" href="css/sobre.css">
 </head>
 <body>
-
-<header>
-  <div class="navbar">
-    <div class="logo">
-      <img src="../imagens/logo.png" alt="Logo Opticore">
-      <span id="titleText">TIME TO OPTIMIZE</span>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="../imagens/logo.png" alt="Logo">
+        <span id="titleText">TIME TO OPTIMIZE</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="../suporte/suporte.html">Suporte</a></li>
+          <li>
+            <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Abrir menu">
+              <span></span><span></span><span></span>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="../suporte/suporte.html">Suporte</a></li>
-          <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Abrir menu">
-            <span></span><span></span><span></span>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<!-- Menu flutuante -->
-<div class="float-menu" id="floatMenu" aria-hidden="true">
-  <div class="float-menu-header">
-    <h3>Menu</h3>
-    <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+  <!-- Float menus (mantive ids únicos e limpos) -->
+  <div class="float-menu" id="floatMenu" aria-hidden="true">
+    <div class="float-menu-header">
+      <h3>Menu</h3>
+      <button class="close-menu" id="closeMenu" aria-label="Fechar menu">&times;</button>
+    </div>
+    <ul>
+      <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
+      <li id="openComandos" role="button" tabindex="0">Comandos Windows</li>
+      <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
+      <li><a href="../Menu/config.html">Configurações Nativas</a></li>
+      <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
+      <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
+      <li><a href="../Menu/segurança.html">Segurança</a></li>
+      <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
+      <li><a href="../Menu/produtividade.html">Produtividade</a></li>
+    </ul>
   </div>
-  <ul>
-    <li id="openAcessibilidade" role="button" tabindex="0">Acessibilidade</li>
-    <li id="openComandos" role="button" tabindex="0">Comandos Windows</li>
-    <li><a href="../Menu/backup.html">Backup e Salvamento em Nuvem</a></li>
-    <li><a href="../Menu/config.html">Configurações Nativas</a></li>
-    <li><a href="../Menu/laptop.html">Dicas para usuários de laptop</a></li>
-    <li><a href="../Menu/desktop.html">Dicas para usuários de desktop</a></li>
-    <li><a href="../Menu/segurança.html">Segurança</a></li>
-    <li><a href="../Menu/manutencao.html">Manutenção e Configuração</a></li>
-    <li><a href="../Menu/produtividade.html">Produtividade</a></li>
-  </ul>
-</div>
 
-<!-- Modal Acessibilidade -->
-<div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
-  <div class="float-menu-header">
-    <h3>Acessibilidade</h3>
-    <button class="close-menu" id="closeAcessibilidade" aria-label="Fechar acessibilidade">&times;</button>
-  </div>
-  <ul>
-    <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
-    <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
-    <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
-    <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
-    <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
-  </ul>
-</div>
-
-<!-- Modal Comandos Windows -->
-<div class="float-menu" id="floatComandos" aria-hidden="true">
-  <div class="float-menu-header">
-    <h3>Comandos do Windows</h3>
-    <button class="close-menu" id="closeComandos" aria-label="Fechar comandos">&times;</button>
-  </div>
-  <p class="comandos-intro">
-    Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.<br>
-    Clique em uma das opções abaixo para ver exemplos de comandos.
-  </p>
-  <ul>
-    <li id="openCMD" role="button" tabindex="0">
-      CMD (Prompt de Comando)
-      <div class="mini-desc">
-        <code>CMD</code> permite executar comandos básicos do Windows para manutenção e diagnóstico.
-      </div>
-    </li>
-    <li id="openPowerShell" role="button" tabindex="0">
-      PowerShell
-      <div class="mini-desc">
-        <code>PowerShell</code> é uma ferramenta avançada para automação, scripts e segurança no Windows.
-      </div>
-    </li>
-    <li id="openWinR" role="button" tabindex="0">
-      Windows + R
-      <div class="mini-desc">
-        O atalho <code>Windows + R</code> abre a caixa de diálogo "Executar" para iniciar rapidamente programas e ferramentas.
+  <div class="float-menu" id="floatAcessibilidade" aria-hidden="true">
+    <div class="float-menu-header">
+      <h3>Acessibilidade</h3>
+      <button class="close-menu" id="closeAcessibilidade">&times;</button>
+    </div>
+    <ul>
+      <li id="increaseFont" role="button" tabindex="0">Aumentar Fonte</li>
+      <li id="decreaseFont" role="button" tabindex="0">Diminuir Fonte</li>
+      <li id="resetFont" role="button" tabindex="0">Restaurar Fonte</li>
+      <li id="toggleMode" role="button" tabindex="0">Modo Claro</li>
       <li class="backToMenu" role="button" tabindex="0">⬅️ Voltar </li>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<!-- Modal Backup -->
-<div class="float-menu" id="floatBackup" aria-hidden="true">
-  <div class="float-menu-header">
-    <h3>Backup e Salvamento em Nuvem</h3>
-    <button class="close-menu" id="closeBackup" aria-label="Fechar backup">&times;</button>
+    </ul>
   </div>
-  <p>Configure backups automáticos e mantenha seus arquivos seguros na nuvem.</p>
-</div>
 
-<canvas id="lightCanvas"></canvas>
+  <div class="float-menu" id="floatComandos" aria-hidden="true">
+    <div class="float-menu-header">
+      <h3>Comandos do Windows</h3>
+      <button class="close-menu" id="closeComandos">&times;</button>
+    </div>
+    <p class="comandos-intro">
+      Use os comandos nativos do Windows para manutenção, diagnóstico e otimização do seu computador.
+    </p>
+    <ul>
+      <li id="openCMD" role="button" tabindex="0">CMD (Prompt de Comando)</li>
+      <li id="openPowerShell" role="button" tabindex="0">PowerShell</li>
+      <li id="openWinR" role="button" tabindex="0">Windows + R</li>
+    </ul>
+  </div>
 
-<main>
-  <div class="texto-principal">
-  <p>
+  <canvas id="lightCanvas"></canvas>
+
+  <main>
+    <section class="sobre">
+      <h1 id="mainTitle">Sobre Nós</h1>
+
+      <div class="texto-principal">
+        <p>
         Somos um grupo de estudantes apaixonados por tecnologia e motivados pelo desejo de transformar conhecimento em benefícios reais para as pessoas. Nossa trajetória começou com a curiosidade em entender como os computadores funcionam e como pequenas ações podem melhorar significativamente o desempenho deles. Com o tempo, essa curiosidade evoluiu para uma iniciativa colaborativa voltada à criação de soluções acessíveis e eficazes, capazes de atender diferentes perfis de usuários — desde iniciantes que buscam orientações básicas até pessoas com maior experiência no uso de sistemas. Esse interesse comum pela otimização e segurança digital deu origem a um projeto que une teoria, prática e responsabilidade tecnológica, sempre com foco na aplicação real dos conhecimentos adquiridos ao longo da formação acadêmica.
       </p>
 
@@ -134,16 +111,12 @@
       <p>
         Dessa forma, este projeto não apenas incentiva o uso responsável da tecnologia, mas também estimula a formação de uma mentalidade mais consciente e preventiva em relação ao ambiente digital. Nosso propósito é que, por meio desta pesquisa, possamos ajudar outras pessoas a compreender que a segurança e o bom desempenho dos computadores dependem de ações simples, mas contínuas, que fazem toda a diferença na rotina e na proteção de dados. Assim, seguimos firmes na missão de compartilhar conhecimento, promover autonomia e contribuir para um uso mais seguro, eficiente e sustentável da tecnologia.
       </p>
-  </div>
-</main>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+        <!-- mais <p> ... </p> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- carregue o script (ajuste o caminho se necessário) -->
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
